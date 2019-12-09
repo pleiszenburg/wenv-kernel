@@ -88,7 +88,7 @@ def _write_config(kernel_path, bits):
 	kernel['env'] = {'WENV_ARCH': 'win{BITS:d}'.format(BITS = bits)}
 
 	with open(os.path.join(kernel_path, KERNEL_FN), 'w', encoding = 'utf-8') as f:
-		f.write(json.dumps(kernel), indent = 4, sort_keys = False)
+		f.write(json.dumps(kernel, indent = 4, sort_keys = False))
 
 def _write_image(kernel_path, bits, size):
 
