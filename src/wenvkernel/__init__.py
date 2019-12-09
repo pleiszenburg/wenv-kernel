@@ -28,4 +28,7 @@ specific language governing rights and limitations under the License.
 # IMPORT / EXPORT
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-from ._core import setup_kernel as _setup_kernel
+from ._core import (
+	setup_kernels as _setup_kernels,
+	setup_kernel as _setup_kernel
+	)
