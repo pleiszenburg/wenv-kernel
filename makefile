@@ -58,6 +58,7 @@ upload_test:
 
 install:
 	pip install -U -e .[dev]
+	python -m wenvkernel.install
 
 test:
 	make docu
