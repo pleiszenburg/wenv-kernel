@@ -21,7 +21,7 @@ A working installation of `wenv`, see [installation instructions](https://wenv.r
 
 | branch | status | installation | documentation |
 | --- | --- | --- | --- |
-| master (release) | [![build_master](https://img.shields.io/travis/pleiszenburg/wenv-kernel/master.svg?style=flat-square "Build Status: master / release")](https://github.com/pleiszenburg/wenv-kernel/blob/master/LICENSE) | `pip install wenvkernel` | [![docs_master](https://readthedocs.org/projects/wenv/-kernelbadge/?version=latest&style=flat-square "Documentation Status: master / release")](https://wenv-kernel.readthedocs.io/en/latest/) |
+| master (release) | [![build_master](https://img.shields.io/travis/pleiszenburg/wenv-kernel/master.svg?style=flat-square "Build Status: master / release")](https://github.com/pleiszenburg/wenv-kernel/blob/master/LICENSE) | `pip install wenvkernel` | [![docs_master](https://readthedocs.org/projects/wenv-kernel/badge/?version=latest&style=flat-square "Documentation Status: master / release")](https://wenv-kernel.readthedocs.io/en/latest/) |
 | develop | [![build_develop](https://img.shields.io/travis/pleiszenburg/wenv-kernel/develop.svg?style=flat-square "Build Status: development branch")](https://wenv-kernel.readthedocs.io/en/develop/) | `pip install git+https://github.com/pleiszenburg/wenv-kernel.git@develop` | [![docs_develop](https://readthedocs.org/projects/wenv-kernel/badge/?version=develop&style=flat-square "Documentation Status: development branch")](https://github.com/pleiszenburg/wenv-kernel/blob/master/LICENSE) |
 
 After installing the package with `pip`, **you must initialize the kernel once** by running ``python -m wenvkernel.install``.
