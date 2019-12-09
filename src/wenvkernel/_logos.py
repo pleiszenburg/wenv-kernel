@@ -2,6 +2,8 @@
 # This file is part of WENV-KERNEL.
 # Do not change it manually. Changes will be lost on next re-build.
 
+LOGO_SIZES = (32, 64)
+
 LOGOS = {
 
 (32, 32): """

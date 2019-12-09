@@ -29,6 +29,7 @@ specific language governing rights and limitations under the License.
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 KERNEL_FN = 'kernel.json'
+LOGO_FN = 'logo-{SIZE:d}x{SIZE:d}.png'
 KERNEL_NAME = 'wenv_python3'
 KERNEL_TEMPLATE = {
 	'argv': [
@@ -47,9 +48,12 @@ KERNEL_TEMPLATE = {
 # IMPORT
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+import base64
 import json
 import os
 import sys
+
+from ._logos import LOGOS, LOGO_SIZES
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # IMPORT
@@ -62,6 +66,8 @@ def setup_kernel():
 		kernel_path = _get_path(kernel_name)
 		_ensure_path(kernel_path)
 		_write_config(kernel_path, bits)
+		for size in LOGO_SIZES:
+			_write_image(kernel_path, bits, size)
 
 def _ensure_path(kernel_path):
 
@@ -83,3 +89,8 @@ def _write_config(kernel_path, bits):
 
 	with open(os.path.join(kernel_path, KERNEL_FN), 'w', encoding = 'utf-8') as f:
 		f.write(json.dumps(kernel), indent = 4, sort_keys = False)
+
+def _write_image(kernel_path, bits, size):
+
+	with open(os.path.join(kernel_path, LOGO_FN.format(SIZE = size)), 'wb') as f:
+		f.write(base64.b64decode(LOGOS[(size, bits)].strip().replace('\n', '')))
