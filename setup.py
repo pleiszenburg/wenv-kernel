@@ -89,6 +89,7 @@ setup(
 			'coverage',
 			'pytest-cov',
 			'python-language-server',
+			'jupyter_kernel_test',
 			'setuptools',
 			'Sphinx',
 			'sphinx_rtd_theme',

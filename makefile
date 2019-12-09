@@ -65,4 +65,4 @@ test:
 
 test_quick:
 	make clean
-	# pytest
+	pytest
