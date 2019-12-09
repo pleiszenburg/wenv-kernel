@@ -57,17 +57,25 @@ import sys
 
 def setup_kernel():
 
-	KERNEL_ROOT = os.path.join(sys.prefix, 'shared', 'kernels')
-
 	for bits in (32, 64):
-		_build_kernel(KERNEL_ROOT, bits)
+		kernel_name = _get_name(bits)
+		kernel_path = _get_path(kernel_name)
+		_ensure_path(kernel_path)
+		_write_config(kernel_path, bits)
 
-def _build_kernel(root_fld, bits):
+def _ensure_path(kernel_path):
 
-	kernel_name = KERNEL_NAME + '_{BITS:d}bit'.format(BITS = bits)
-
-	kernel_path = os.path.join(root_fld, kernel_name)
 	os.makedirs(kernel_path, exist_ok = True)
+
+def _get_name(bits):
+
+	return KERNEL_NAME + '_{BITS:d}bit'.format(BITS = bits)
+
+def _get_path(kernel_name):
+
+	return os.path.join(sys.prefix, 'shared', 'kernels', kernel_name)
+
+def _write_config(kernel_path, bits):
 
 	kernel = KERNEL_TEMPLATE.copy()
 	kernel['display_name'] += ' {BITS:d}bit'.format(BITS = bits)
