@@ -25,14 +25,50 @@ specific language governing rights and limitations under the License.
 """
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# CONST
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+KERNEL_FN = 'kernel.json'
+KERNEL_NAME = 'wenv_python3'
+KERNEL_TEMPLATE = {
+	'argv': [
+		'wenv',
+		'python',
+		'-m',
+		'ipykernel_launcher',
+		'-f',
+		'{connection_file}'
+		],
+	'display_name': 'wenv python',
+	'language': 'python',
+	}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # IMPORT
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+import json
 import os
+import sys
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # IMPORT
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 def setup_kernel():
-	pass
+
+	KERNEL_ROOT = os.path.join(sys.prefix, 'shared', 'kernels')
+
+	for bits in (32, 64):
+		_build_kernel(KERNEL_ROOT, bits)
+
+def _build_kernel(root_fld, bits):
+
+	kernel = KERNEL_TEMPLATE.copy()
+	kernel['display_name'] += ' {BITS:d}bit'.format(BITS = bits)
+	kernel['env'] = {'WENV_ARCH': 'win{BITS:d}'.format(BITS = bits)}
+
+	name = KERNEL_NAME + '_{BITS:d}bit'.format(BITS = bits)
+
+	with open(os.path.join(root_fld, name, KERNEL_FN), 'w', encoding = 'utf-8') as f:
+		f.write(json.dumps(kernel), indent = 4, sort_keys = False)
