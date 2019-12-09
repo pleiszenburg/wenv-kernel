@@ -46,9 +46,13 @@ TEMPLATE_FILE = """# -*- coding: utf-8 -*-
 # This file is part of WENV-KERNEL.
 # Do not change it manually. Changes will be lost on next re-build.
 
+LOGOS = {{
+
 {CONTENT}
+
+}}
 """
-TEMPLATE_VAR = 'LOGO_{SIZE:d}_{BITS:d} = """\n{IMAGE:s}\n"""'
+TEMPLATE_VAR = '({SIZE:d}, {BITS:d}): """\n{IMAGE:s}\n""",'
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # ROUTINES
