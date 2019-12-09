@@ -79,7 +79,7 @@ def _get_name(bits):
 
 def _get_path(kernel_name):
 
-	return os.path.join(sys.prefix, 'shared', 'kernels', kernel_name)
+	return os.path.join(sys.prefix, 'share', 'jupyter', 'kernels', kernel_name)
 
 def _write_config(kernel_path, bits):
 
