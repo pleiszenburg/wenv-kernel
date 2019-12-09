@@ -37,6 +37,9 @@ release_clean:
 docu:
 	@(cd docs; make clean; make html)
 
+resources:
+	python -c "import makefile; makefile.resources()"
+
 release:
 	make release_clean
 	python setup.py sdist bdist_wheel
