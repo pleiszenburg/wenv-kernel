@@ -43,7 +43,7 @@ from sys import platform
 
 
 # Bump version HERE!
-_version_ = '0.0.1'
+__version__ = '0.0.1'
 
 
 # List all versions of Python which are supported
@@ -60,6 +60,10 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as f:
 	long_description = f.read()
 
 
+# Define source directory (path)
+SRC_DIR = "src"
+
+
 # Just in case someone is actually running this on Windows ...
 if platform.startswith('win'):
 	raise SystemExit('You are already running Windows. No need for this package!')
@@ -67,16 +71,16 @@ if platform.startswith('win'):
 
 setup(
 	name = 'wenvkernel',
-	packages = find_packages('src'),
-	package_dir = {'': 'src'},
-	version = _version_,
+	packages = find_packages(SRC_DIR),
+	package_dir = {'': SRC_DIR},
+	version = __version__,
 	description = 'Jupyter kernel for Python on Wine',
 	long_description = long_description,
 	long_description_content_type = 'text/markdown',
 	author = 'Sebastian M. Ernst',
 	author_email = 'ernst@pleiszenburg.de',
 	url = 'https://github.com/pleiszenburg/wenv-kernel',
-	download_url = 'https://github.com/pleiszenburg/wenv-kernel/archive/v%s.tar.gz' % _version_,
+	download_url = 'https://github.com/pleiszenburg/wenv-kernel/archive/v%s.tar.gz' % __version__,
 	license = 'LGPLv2',
 	keywords = ['wine', 'cross platform', 'jupyter', 'notebook', 'kernel'],
 	scripts = [],
