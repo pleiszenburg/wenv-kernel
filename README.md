@@ -1,5 +1,5 @@
-[![build_master](https://img.shields.io/travis/pleiszenburg/wenv-kernel/master.svg?style=flat-square "Build Status: master / release")](https://travis-ci.org/pleiszenburg/wenv-kernel)
-[![build_develop](https://img.shields.io/travis/pleiszenburg/wenv-kernel/develop.svg?style=flat-square "Build Status: development branch")](https://travis-ci.org/pleiszenburg/wenv-kernel)
+<!-- [![build_master](https://img.shields.io/travis/pleiszenburg/wenv-kernel/master.svg?style=flat-square "Build Status: master / release")](https://travis-ci.org/pleiszenburg/wenv-kernel) -->
+<!-- [![build_develop](https://img.shields.io/travis/pleiszenburg/wenv-kernel/develop.svg?style=flat-square "Build Status: development branch")](https://travis-ci.org/pleiszenburg/wenv-kernel) -->
 [![license](https://img.shields.io/pypi/l/wenvkernel.svg?style=flat-square "GNU Lesser General Public License v2.1")](https://github.com/pleiszenburg/wenv-kernel/blob/master/LICENSE)
 [![status](https://img.shields.io/pypi/status/wenvkernel.svg?style=flat-square "Project Development Status")](https://github.com/pleiszenburg/wenv-kernel/issues)
 [![pypi_version](https://img.shields.io/pypi/v/wenvkernel.svg?style=flat-square "Project Development Status")](https://pypi.python.org/pypi/wenvkernel)
