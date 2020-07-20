@@ -51,11 +51,6 @@ upload:
 		twine upload $$filename $$filename.asc ; \
 	done
 
-upload_test:
-	for filename in $$(ls dist/*.tar.gz dist/*.whl) ; do \
-		twine upload $$filename $$filename.asc -r pypitest ; \
-	done
-
 install:
 	pip install -U -e .[dev]
 	python -m wenvkernel.install
