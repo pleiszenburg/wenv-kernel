@@ -37,9 +37,6 @@ release_clean:
 	make clean
 	-rm -r src/*.egg-info
 
-docu:
-	@(cd docs; make clean; make html)
-
 resources:
 	python -c "import makefile; makefile.resources()"
 
@@ -64,9 +61,5 @@ install:
 	python -m wenvkernel.install
 
 test:
-	make docu
-	make test_quick
-
-test_quick:
 	make clean
 	pytest
