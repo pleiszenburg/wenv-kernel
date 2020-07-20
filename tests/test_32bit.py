@@ -6,9 +6,9 @@ WENV-KERNEL
 Jupyter kernel for Python on Wine
 https://github.com/pleiszenburg/wenv-kernel
 
-	tests/test_32bit.py: Testing 32 bit kernel
+    tests/test_32bit.py: Testing 32 bit kernel
 
-	Copyright (C) 2017-2020 Sebastian M. Ernst <ernst@pleiszenburg.de>
+    Copyright (C) 2017-2020 Sebastian M. Ernst <ernst@pleiszenburg.de>
 
 <LICENSE_BLOCK>
 The contents of this file are subject to the GNU Lesser General Public License
@@ -35,40 +35,39 @@ import jupyter_kernel_test
 # TESTS
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
 class MyKernelTests(jupyter_kernel_test.KernelTests):
-	# Required --------------------------------------
+    # Required --------------------------------------
 
-	# The name identifying an installed kernel to run the tests against
-	kernel_name = "wenv_python3_32bit"
+    # The name identifying an installed kernel to run the tests against
+    kernel_name = "wenv_python3_32bit"
 
-	# language_info.name in a kernel_info_reply should match this
-	language_name = "python"
+    # language_info.name in a kernel_info_reply should match this
+    language_name = "python"
 
-	# Optional --------------------------------------
+    # Optional --------------------------------------
 
-	# Code in the kernel's language to write "hello, world" to stdout
-	code_hello_world = "print('hello, world')"
+    # Code in the kernel's language to write "hello, world" to stdout
+    code_hello_world = "print('hello, world')"
 
-	# Pager: code that should display something (anything) in the pager
-	code_page_something = "help(print)"
+    # Pager: code that should display something (anything) in the pager
+    code_page_something = "help(print)"
 
-	# Samples of code which generate a result value (ie, some text
-	# displayed as Out[n])
-	code_execute_result = [
-		{'code': '6*7', 'result': '42'}
-	]
+    # Samples of code which generate a result value (ie, some text
+    # displayed as Out[n])
+    code_execute_result = [{"code": "6*7", "result": "42"}]
 
-	# Samples of code which should generate a rich display output, and
-	# the expected MIME type
-	# code_display_data = [
-	# 	{'code': 'show_image()', 'mime': 'image/png'}
-	# ]
+    # Samples of code which should generate a rich display output, and
+    # the expected MIME type
+    # code_display_data = [
+    # 	{'code': 'show_image()', 'mime': 'image/png'}
+    # ]
 
-	# You can also write extra tests. We recommend putting your kernel name
-	# in the method name, to avoid clashing with any tests that
-	# jupyter_kernel_test adds in the future.
-	# def test_wenv_python3_32bit_stderr(self):
-	# 	reply, output_msgs = self.execute_helper(code='print_err "oops"')
-	# 	self.assertEqual(output_msgs[0].header['msg_type'], 'stream')
-	# 	self.assertEqual(output_msgs[0].content['name'], 'stderr')
-	# 	self.assertEqual(output_msgs[0].content['text'], 'oops\n')
+    # You can also write extra tests. We recommend putting your kernel name
+    # in the method name, to avoid clashing with any tests that
+    # jupyter_kernel_test adds in the future.
+    # def test_wenv_python3_32bit_stderr(self):
+    # 	reply, output_msgs = self.execute_helper(code='print_err "oops"')
+    # 	self.assertEqual(output_msgs[0].header['msg_type'], 'stream')
+    # 	self.assertEqual(output_msgs[0].content['name'], 'stderr')
+    # 	self.assertEqual(output_msgs[0].content['text'], 'oops\n')

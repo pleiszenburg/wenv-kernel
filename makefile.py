@@ -35,9 +35,9 @@ import os
 # CONST
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-LOGO_PY = os.path.join('src', 'wenvkernel', '_logos.py')
-RESOURCES_FLD = 'res'
-LOGO_FN = 'logo-{SIZE:d}x{SIZE:d}_{BITS:d}.png'
+LOGO_PY = os.path.join("src", "wenvkernel", "_logos.py")
+RESOURCES_FLD = "res"
+LOGO_FN = "logo-{SIZE:d}x{SIZE:d}_{BITS:d}.png"
 SIZES = (32, 64)
 BITS = (32, 64)
 LINE_LEN = 72
@@ -60,24 +60,28 @@ TEMPLATE_VAR = '({SIZE:d}, {BITS:d}): """\n{IMAGE:s}\n""",'
 # ROUTINES
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
 def resources():
 
-	images = {(bits, size): _get_image(bits, size) for size in SIZES for bits in BITS}
+    images = {(bits, size): _get_image(bits, size) for size in SIZES for bits in BITS}
 
-	content = [
-		TEMPLATE_VAR.format(BITS = bits, SIZE = size, IMAGE = image)
-		for (bits, size), image in images.items()
-		]
+    content = [
+        TEMPLATE_VAR.format(BITS=bits, SIZE=size, IMAGE=image)
+        for (bits, size), image in images.items()
+    ]
 
-	with open(LOGO_PY, 'w', encoding = 'utf-8') as f:
-		f.write(TEMPLATE_FILE.format(CONTENT = '\n\n'.join(content)))
+    with open(LOGO_PY, "w", encoding="utf-8") as f:
+        f.write(TEMPLATE_FILE.format(CONTENT="\n\n".join(content)))
+
 
 def _get_image(bits, size):
 
-	fn = LOGO_FN.format(BITS = bits, SIZE = size)
-	with open(os.path.join(RESOURCES_FLD, fn), 'rb') as f:
-		data = f.read()
+    fn = LOGO_FN.format(BITS=bits, SIZE=size)
+    with open(os.path.join(RESOURCES_FLD, fn), "rb") as f:
+        data = f.read()
 
-	data = base64.b64encode(data).decode('utf-8')
+    data = base64.b64encode(data).decode("utf-8")
 
-	return '\n'.join(data[pos:(pos + LINE_LEN)] for pos in range(0, len(data), LINE_LEN))
+    return "\n".join(
+        data[pos : (pos + LINE_LEN)] for pos in range(0, len(data), LINE_LEN)
+    )

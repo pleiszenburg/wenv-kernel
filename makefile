@@ -19,6 +19,9 @@
 # </LICENSE_BLOCK>
 
 
+black:
+	black .
+
 clean:
 	-rm -r build/*
 	-rm -r dist/*

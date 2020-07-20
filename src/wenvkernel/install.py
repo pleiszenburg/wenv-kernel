@@ -6,9 +6,9 @@ WENV-KERNEL
 Jupyter kernel for Python on Wine
 https://github.com/pleiszenburg/wenv-kernel
 
-	src/wenvkernel/install.py: User install entry point
+    src/wenvkernel/install.py: User install entry point
 
-	Copyright (C) 2017-2020 Sebastian M. Ernst <ernst@pleiszenburg.de>
+    Copyright (C) 2017-2020 Sebastian M. Ernst <ernst@pleiszenburg.de>
 
 <LICENSE_BLOCK>
 The contents of this file are subject to the GNU Lesser General Public License
@@ -34,5 +34,5 @@ from ._core import setup_kernels as _setup_kernels
 # ENTRY POINT
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-if __name__ == '__main__':
-	_setup_kernels()
+if __name__ == "__main__":
+    _setup_kernels()
