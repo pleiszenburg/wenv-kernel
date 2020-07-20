@@ -84,7 +84,7 @@ setup(
     scripts=[],
     include_package_data=True,
     python_requires=">=3.{MINOR:d}".format(MINOR=python_minor_min),
-    install_requires=["jupyterlab", "wenv"],
+    install_requires=["jupyterlab", "wenv~=0.2.0"],
     extras_require={
         "dev": [
             "black",
