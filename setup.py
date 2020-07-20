@@ -47,9 +47,11 @@ _version_ = '0.0.1'
 
 
 # List all versions of Python which are supported
+python_minor_min = 4
+python_minor_max = 8
 confirmed_python_versions = [
-	('Programming Language :: Python :: %s' % x)
-	for x in '3.4 3.5 3.6 3.7 3.8'.split()
+	"Programming Language :: Python :: 3.{MINOR:d}".format(MINOR=minor)
+	for minor in range(python_minor_min, python_minor_max + 1)
 	]
 
 
@@ -76,9 +78,10 @@ setup(
 	url = 'https://github.com/pleiszenburg/wenv-kernel',
 	download_url = 'https://github.com/pleiszenburg/wenv-kernel/archive/v%s.tar.gz' % _version_,
 	license = 'LGPLv2',
-	keywords = ['wine', 'cross platform'],
+	keywords = ['wine', 'cross platform', 'jupyter', 'notebook', 'kernel'],
 	scripts = [],
 	include_package_data = True,
+	python_requires=">=3.{MINOR:d}".format(MINOR=python_minor_min),
 	install_requires = [
 		'jupyterlab',
 		'wenv'
