@@ -22,7 +22,7 @@ pip install wenvkernel
 python -m wenvkernel.install
 ```
 
-After installing the package with `pip`, **you must initialize the kernel once** by running ``python -m wenvkernel.install``.
+After installing the package with `pip`, you must not forget to run the kernel install module once as shown above.
 
 ## Examples
 
