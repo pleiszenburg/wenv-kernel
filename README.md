@@ -26,11 +26,9 @@ After installing the package with `pip`, **you must initialize the kernel once**
 
 ## Examples
 
-![launcher](https://github.com/pleiszenburg/wenv-kernel/blob/master/docs/launcher.png?raw=true "launcher")
-
-![platform](https://github.com/pleiszenburg/wenv-kernel/blob/master/docs/platform.png?raw=true "platform")
-
-![ipc](https://github.com/pleiszenburg/wenv-kernel/blob/master/docs/ipc.png?raw=true "ipc")
+| launcher | platform | ipc |
+|:--------:|:--------:|:---:|
+| ![launcher](https://github.com/pleiszenburg/wenv-kernel/blob/master/docs/launcher.png?raw=true "launcher") | ![platform](https://github.com/pleiszenburg/wenv-kernel/blob/master/docs/platform.png?raw=true "platform") | ![ipc](https://github.com/pleiszenburg/wenv-kernel/blob/master/docs/ipc.png?raw=true "ipc") |
 
 See [examples](https://github.com/pleiszenburg/wenv-kernel/blob/master/examples) for example Jupyter notebooks.
 
